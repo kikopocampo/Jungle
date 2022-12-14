@@ -1,0 +1,12 @@
+<tr>
+<td>
+  <div class="d-flex flex-column align-items-center">
+  <%= image_tag i.product.image.tiny.url %>
+  <%=i.product.name%>
+  </div>
+</td>
+<td><small><%=i.product.description%></small></td>
+<td>$<%=i.product.price%></td>
+<td><%=i.quantity%></td>
+<td>$<%=i.quantity * i.product.price%></td>
+</tr>
