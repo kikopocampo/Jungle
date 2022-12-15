@@ -4,6 +4,11 @@
     <h1>Admin &raquo; All Products</h1>
   </header>
 
+  <% if flash[:notice] %>
+    <div class="text-danger"><%= flash[:notice] %></div>
+  <% end %>
+
+
   <div class="well">
     <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
   </div>

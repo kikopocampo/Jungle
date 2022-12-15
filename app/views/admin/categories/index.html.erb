@@ -4,6 +4,10 @@
     <h1>Admin &raquo; Categories</h1>
   </header>
 
+  <% if flash[:notice] %>
+          <div class="text-danger"><%= flash[:notice] %></div>
+        <% end %>
+
   <div class="well">
     <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
@@ -20,9 +24,12 @@
       <tbody>
       <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
-        <td>
-          <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+      <td><%= category.name %></td>
+      <td>
+
+        <% btn_class = category.products.length != 0 ? 'btn btn-sm btn-danger disabled' : 'btn btn-sm btn-danger'  %>
+        <%= link_to fa_icon('trash'), [:admin, category], class: btn_class , method: :delete, data: { confirm: "Are you sure?" } %>
+        
         </td>
       </tr>
       <% end %>  
