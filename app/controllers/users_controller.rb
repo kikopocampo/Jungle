@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:notice] = "Registration Failed: Incomplete form / password do not match"
+      flash[:notice] = "Registration Failed: Incomplete form / passwords do not match"
       redirect_to new_user_path
     end
   end  
