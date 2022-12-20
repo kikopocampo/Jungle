@@ -52,6 +52,8 @@ gem 'carrierwave'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem "cypress-rails"
+  gem "database_cleaner-active_record"
   gem 'rspec-rails', '~> 5.1'
   gem 'net-smtp', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
