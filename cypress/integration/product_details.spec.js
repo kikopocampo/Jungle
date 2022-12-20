@@ -13,9 +13,7 @@ it("Should navigate to product detail page and back", () => {
     .click()
   
   cy.get("span").contains("Giant Tea")
-
-
-  // cy.contains("h3", "Sold Out")
+  cy.contains("h3", "Sold Out")
 
 });
 
