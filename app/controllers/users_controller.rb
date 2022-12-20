@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    if !User.find_by_email(user_params['email'])
-      if user_params['password'] != user_params['password_confirmation']
-        flash[:notice] = "Registration Failed: Password not match" 
+    if !User.find_by_email(user_params['email'].downcase)
+      if user_params['password'] != user_params['password_confirmation'] || user_params['password'].length < 7
+        flash[:notice] = "Registration Failed: Password not match / Password too short (Minimum 7 characters)" 
         redirect_to new_user_path
       else
         user = User.new(user_params)
