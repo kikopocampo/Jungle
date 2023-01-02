@@ -33,13 +33,29 @@ RSpec.describe Product, type: :model do
       @category = Category.new(name: "Evergreens")
       @product = Product.new(
         name: "Monstera",
-        price: 'One hundred',
+        price_cents: 'One hundred',
         category: @category,
         quantity: 10
       )
       @product.save
       @error = @product.errors.full_messages
-      expect(@error[0]).to eq("Price is not a number")
+      expect(@error[0]).to eq("Price cents is not a number")
+      expect(@product).to_not be_valid
+    end
+
+    it 'should be invalid if price is invalid' do
+      @category = Category.new(name: "Evergreens")
+      @product = Product.new(
+        name: "Monstera",
+        price_cents: nil,
+        category: @category,
+        quantity: 10
+      )
+      @product.save
+      @error = @product.errors.full_messages
+      expect(@error[0]).to eq("Price cents is not a number")
+      expect(@error[1]).to eq("Price is not a number")
+      expect(@error[2]).to eq("Price can't be blank")
       expect(@product).to_not be_valid
     end
 

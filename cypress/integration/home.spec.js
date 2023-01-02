@@ -1,9 +1,15 @@
-cy.visit('http://localhost:3000/')
+describe("Home", () => {
 
-it("There is products on the page", () => {
-  cy.get(".products article").should("be.visible");
-});
+  it("Should visit home page", () => {
+    cy.visit("/");
+  });
 
-it("There is 12 products on the page", () => {
-  cy.get(".products article").should("have.length", 12);
-});
+  it("There is products on the page", () => {
+    cy.get(".products article").should("be.visible");
+  });
+  
+  it("There are 2 products on the page", () => {
+    cy.get(".products article").should("have.length", 2);
+  });
+  
+  });
