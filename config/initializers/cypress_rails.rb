@@ -24,17 +24,19 @@ CypressRails.hooks.before_server_start do
     price: 24.99
   })
 
-  # User.create({
-  #   first_name: "Francisco",
-  #   last_name: "Ocampo",
-  #   email: "kikopocampo@gmail.com",
-  #   password_digest: "bananas"
-  # })
+  User.create!({
+    first_name: "Francisco",
+    last_name: "Ocampo",
+    email: "kikopocampo2@gmail.com",
+    password: "bananas",
+    password_confirmation: "bananas"
+  })
 
 end
 
 CypressRails.hooks.after_transaction_start do
   # Called after the transaction is started (at launch and after each reset)
+  
 end
 
 CypressRails.hooks.after_state_reset do

@@ -1,6 +1,8 @@
-# Jungle
+# The Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1.
+
+![](./public/images/Screen%20Shot%202023-01-03%20at%2010.04.56%20AM.png)
 
 ## Setup
 
@@ -22,6 +24,26 @@ If Rails is complaining about authentication to the database, uncomment the user
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
+
+## Usage
+
+After all the set-up, you will be shown a home page that displays the products available and their information.
+
+![](./public/images/navigation.gif)
+
+Product to detail page
+
+![](./public/images/product-detail.gif)
+
+Adding products to cart and checking out
+
+![](./public/images/add-to-cart.gif)
+
+As an admin a sign-in page will be displayed and when entered the correct credentials, access to products, categories, and dashboard will be granted.
+
+![](./public/images/Add%20products.gif)
+![](./public/images/add-category.gif)
+
 
 ## Dependencies
 
